@@ -1,0 +1,42 @@
+export const input_fields2 = [
+    { value: "Name", type: "text", required: true },
+    { value: "Age", type: "number", required: true },
+    { value: "Weight (in kg)", type: "number", required: true },
+    { value: "Height (in cm)", type: "number", required: true },
+    { value: "Gender", type: "radio", required: true },
+    { value: "Fitness Goal", type: "text", required: true },
+    { value: "Any existing medical conditions or injuries? If yes, please specify.", type: "textarea" },
+    { value: "Current activity level", type: "select", required: true },
+    { value: "How many days per week are you willing to commit to exercise?", type: "number", required: true },
+    { value: "Preferred exercise duration per session (in minutes)", type: "number", required: true },
+    { value: "Do you have any dietary restrictions or preferences? If yes, please specify.", type: "textarea" },
+    { value: "Are you currently following any specific diet? If yes, please specify.", type: "text" },
+    { value: "Any specific dietary preferences (e.g., vegetarian, vegan, gluten-free)? If yes, please specify.", type: "text" },
+    { value: "Current daily calorie intake (approximate)", type: "number" },
+    { value: "Food allergies or intolerances? If yes, please specify.", type: "text" },
+    { value: "Do you have any specific time constraints for your workouts?", type: "text" },
+    { value: "Do you have any access to exercise equipment? If yes, please specify.", type: "text" },
+    { value: "Do you have any previous experience with structured exercise programs? If yes, please provide details.", type: "textarea" },
+    { value: "Do you have any other relevant information or specific goals you'd like to mention?", type: "textarea" },
+  ];
+  
+  
+  export const input_fields = [
+    { value: "Name", type: "text", required: true },
+    { value: "Age", type: "number", required: true },
+    { value: "Weight in KG", type: "number", required: true },
+    { value: "Height in CM", type: "number", required: true },
+    { value: "Gender", type: "radio", required: true },
+    { value: "Fitness Goal", type: "text", required: true },
+    { value: "Existing Medical Conditions", type: "textarea" },
+    { value: "daily Activity Level out of 10", type: "number", required: true },
+    { value: "Weekly Exercise Days", type: "number", required: true },
+    { value: "Exercise Duration (mins)", type: "number", required: true },
+    { value: "Dietary Restrictions", type: "textarea" },
+    { value: "Dietary Preferences", type: "text" },
+    { value: "Food Allergies/Intolerances", type: "text" },
+    { value: "Access to Exercise Equipment", type: "text" },
+    { value: "Previous Exercise Experience", type: "textarea" },
+    { value: "Other Goals/Information", type: "textarea" },
+  ];
+  
