@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "nodeemon",
-    "start": "express"
+    "start": "express",
+    "build": ""
   },
   "author": "",
   "license": "ISC",
