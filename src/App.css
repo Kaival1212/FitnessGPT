@@ -86,3 +86,49 @@
   top: 0;
   height: 15vh;
 }
+
+
+@media screen and (max-width: 822px){
+  .form {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+  }
+  .buttonContainer {
+    grid-column: 1 / span 2;
+  }
+  .title {
+    font-size: 60px;
+  }
+  .header {
+    font-size: 28px;
+  }
+  .headerP{
+    font-size: 15px;
+  }
+}
+
+
+@media screen and (max-width: 600px){
+  .form {
+    display: grid;
+    grid-template-columns: auto;
+  }
+  .buttonContainer {
+    grid-column: 1;
+    margin: 20px 50px ;
+
+  }
+  .formItems{
+    padding: 5px;
+    margin:10px
+  }
+  .title {
+    font-size: 10vw;
+  }
+  .header {
+    font-size: 5vw;
+  }
+  .headerP{
+    font-size: 3vw;
+  } 
+}

@@ -1,11 +1,27 @@
-import { useState } from "react";
-import  "./App.css";
+import { useState, useEffect } from "react";
+import "./App.css";
 import { input_fields } from "./components/inputfield";
 
 export default function Home() {
   const [formData, setFormData] = useState({});
   const [gpt, setgpt] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+
+  const servercall = async () => {
+    setIsLoading(true);
+    await fetch("https://fitnessgpt112.netlify.app/.netlify/functions/api", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setgpt(data.response);
+        setIsLoading(false);
+      });
+  };
 
   const handleChange = (e) => {
     setFormData((prevData) => ({
@@ -16,10 +32,11 @@ export default function Home() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    gtpdata();
+    servercall();
+    // gtpdata();
   };
 
-  const gtpdata = async() => {
+  const gtpdata = async () => {
     setIsLoading(true);
     await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
@@ -43,7 +60,7 @@ Note: Avoid any superfluous pre and post descriptive text, and don't break chara
 
 Bonus: Please finish your response with 10 motivational & inspiring quotes.
 
-this all should be in HTML format and it will be displayed in a <div> element
+this all should be in HTML format and it will be displayed in a <div> element and do not add any additional css
             `,
           },
         ],
@@ -112,7 +129,9 @@ this all should be in HTML format and it will be displayed in a <div> element
             </div>
           ))}
           <div className="buttonContainer">
-            <button type="submit" disabled={isLoading}>
+            <button type="submit" 
+            // disabled={isLoading}
+            >
               {isLoading ? "Loading..." : "Submit"}
             </button>
           </div>
