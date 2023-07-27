@@ -1,5 +1,6 @@
 const express = require("express");
 const fetch = require('node-fetch');
+require = require('esm')(module);
 const app = express();
 const cors = require("cors");
 app.use(cors());
