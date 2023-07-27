@@ -24,7 +24,7 @@ const gtpdata = async (formData) => {
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
       headers: {
-        Authorization: `Bearer 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`,
+        Authorization: `Bearer ${process.env.OPENAI_KEY}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
