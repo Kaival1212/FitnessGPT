@@ -6,7 +6,7 @@
   "scripts": {
     "test": "nodeemon",
     "start": "express",
-    "build": ""
+    "build": "express"
   },
   "author": "",
   "license": "ISC",
