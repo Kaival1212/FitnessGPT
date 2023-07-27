@@ -15,8 +15,9 @@ app.post("/a", async function (req, res) {
   res.json({ response: gptres });
 });
 
+const port =process.env.PORT||8080;
 
-app.listen(process.env.PORT);
+app.listen(port ,(()=>{console.log("listening on port",port)}));
 
 const gtpdata = async (formData) => {
   try {
