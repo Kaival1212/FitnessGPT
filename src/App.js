@@ -7,22 +7,6 @@ export default function Home() {
   const [gpt, setgpt] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  const servercall = async () => {
-    setIsLoading(true);
-    await fetch("https://fitnessgpt112.netlify.app/.netlify/functions/api", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setgpt(data.response);
-        setIsLoading(false);
-      });
-  };
-
   const handleChange = (e) => {
     setFormData((prevData) => ({
       ...prevData,
@@ -32,47 +16,27 @@ export default function Home() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    servercall();
-    // gtpdata();
+    // servercall();
+    gtpdata();
   };
 
   const gtpdata = async () => {
+    console.log(formData);
     setIsLoading(true);
-    await fetch("https://api.openai.com/v1/chat/completions", {
+    await fetch("https://fitnessgpt.onrender.com/a", {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${process.env.REACT_APP_GPT_API_KEY}`,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        model: "gpt-3.5-turbo",
-        messages: [
-          {
-            role: "assistant",
-            content: `You are a highly renowned health and nutrition expert FitnessGPT. Please use the following information about me and create a custom diet ,workout and exercise plan details:"${JSON.stringify(
+      body:JSON.stringify(
               formData
-            )}" 
-            Then, create a detailed workout program for an exercise program, and build a detailed Meal Plan considering my diet and preferences. 
-
-Finally, create a detailed Grocery List for my diet that includes quantity of each item. 
-
-Note: Avoid any superfluous pre and post descriptive text, and don't break character under any circumstance. 
-
-Bonus: Please finish your response with 10 motivational & inspiring quotes.
-
-this all should be in HTML format and it will be displayed in a <div> element and do not add any additional css
-            `,
-          },
-        ],
-        temperature: 0.7,
-      }),
-    })
+              )})
       .then((response) => response.json()) // Parse the response JSON
       .then((data) => {
-        setgpt(data.choices[0]?.message["content"] || data.choices);
+        setgpt(data.response || "error");
         setIsLoading(false);
       }) // Process the response data
-      .catch((error) => console.error("Error:", error)); // Handle any errors
+      .catch((error) => console.error("Error:", error)) // Handle any errors
   };
   return (
     <>

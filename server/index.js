@@ -11,8 +11,10 @@ app.get('/', (req, res) => {
 });
 
 app.post("/a", async function (req, res) {
+  console.log("POST founded")
   const formData = req.body;
   const gptres = await gtpdata(formData);
+  console.log("GPT data send")
   res.json({ response: gptres });
 });
 
@@ -33,7 +35,7 @@ const gtpdata = async (formData) => {
         messages: [
           {
             role: "assistant",
-            content: `You are a highly renowned health and nutrition expert FitnessGPT. Please use the following information about me and create a custom diet, workout, and exercise plan details: "${formData}" 
+            content: `You are a highly renowned health and nutrition expert FitnessGPT. Please use the following information about me and create a custom diet, workout, and exercise plan details: ${formData}
               Then, create a detailed workout program for an exercise program, and build a detailed Meal Plan considering my diet and preferences. 
 
   Finally, create a detailed Grocery List for my diet that includes the quantity of each item. 
