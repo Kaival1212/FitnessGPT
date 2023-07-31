@@ -13,6 +13,7 @@ app.get('/', (req, res) => {
 app.post("/a", async function (req, res) {
   console.log("POST founded")
   const formData = req.body;
+  console.log(formData);
   const gptres = await gtpdata(formData);
   console.log("GPT data send")
   res.json({ response: gptres });
