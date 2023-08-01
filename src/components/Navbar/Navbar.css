@@ -1,12 +1,30 @@
 .title {
-    font-size: 80px;
-    background-color: #01a27fcc;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    margin: 0;
-    top: 0;
-    height: 15vh;
-  }
+  font-size: 80px;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
+
+
+.button {
+  height: auto;
+  padding: 10px 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+.Navbar {
+  background-color: #01a27fcc;
+  height: 15vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.Navbarbuttondiv{
+  width:  8%;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 10px;
+}

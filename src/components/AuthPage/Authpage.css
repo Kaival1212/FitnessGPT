@@ -1,0 +1,59 @@
+
+.authPageMainDiv{
+    display: flex;
+    margin-top: 20vh;
+    width: 100vw;
+    justify-content: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.authPageAuthBox{
+    display: flex;
+    flex-direction: column;
+    background-color: #04c79d53;
+    height: 50vh;
+    width: 30vw;
+}
+
+.authPageAuthBox>form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 40vh;
+}
+
+.authPageLoginWithIcons>img{
+    height: 50px;
+
+}
+.authPageLoginWithIcons{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+.authPageHeading{
+    text-align: center;
+}
+
+.authPageFormField{
+    font-size: larger;
+    padding: 0px 30px;
+    justify-content:space-evenly;
+    width: 100%;
+    display: flex;
+
+}
+
+.authPageLine{
+    background-color: black;
+    height: 1px;
+    width: 90%;
+}
+
+.authPageLoginButton{
+    padding: 5px 60px;
+    font-size: larger;
+    border-radius: 10px;
+    border: none;
+}

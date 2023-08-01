@@ -86,7 +86,7 @@
     grid-column: 1 / span 2;
   }
   .title {
-    font-size: 60px;
+    font-size: 60px !important;
   }
   .header {
     font-size: 28px;
@@ -112,7 +112,7 @@
     margin:10px
   }
   .title {
-    font-size: 10vw;
+    font-size: 11vw !important;
   }
   .header {
     font-size: 5vw;
