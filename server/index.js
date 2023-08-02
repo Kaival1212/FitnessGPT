@@ -1,17 +1,26 @@
 const express = require("express");
 const fetch = require('cross-fetch');
+const {client} = require('./database/mongodbconnect'); 
 const app = express();
 const cors = require("cors");
 app.use(cors());
+require('dotenv').config();
 app.use(express.json()); // Add this line to parse JSON request bodies
 
 
-app.get('/', (req, res) => {
+app.get('/', async function(req, res)  {
   res.send(JSON.stringify({ "hello": "world" }));
+  try {
+    await client.connect();
+    console.log(client.db("Cluster0"));
+  } catch (error) {
+    console.error("Error connecting to MongoDB:", error);
+  }
+
 });
 
 app.post("/a", async function (req, res) {
-  console.log("POST founded")
+  // console.log("POST founded")
   const formData = req.body;
   console.log(JSON.stringify(formData));
   const gptres = await gtpdata(formData);

@@ -1,0 +1,141 @@
+.main {
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+  }
+  
+  .header {
+    font-size: 48px;
+    color: #156064;
+  
+  }
+  
+  .headerP {
+    text-align: center;
+    font-family: "playfair";
+    font-size: 20px;
+    line-height: 1.5em;
+    width: 65%;
+  
+  }
+  
+  .form {
+    display: grid;
+    grid-template-columns: 2fr 2fr auto;
+    margin-top: 20px;
+  
+  }
+  
+  .formItems {
+    background-color: #fede3ee7;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    text-align: center;
+    font-family: "playfair";
+    margin: 10px;
+    border-radius: 20%;
+    box-shadow: rgba(0, 0, 0, 0.378) 10px 10px;
+  
+  }
+  
+  .inputFlex {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .red {
+    color: red;
+  }
+  
+  .buttonContainer {
+    grid-column: 1 / span 3;
+    /* Span across 3 columns */
+    margin: 20px 250px 50px 250px;
+  }
+  
+  .buttonContainer button {
+    width: 100%;
+    height: 40px;
+    background-color: #f5da50;
+    color: #156064;
+    font-family: "playfair";
+    font-size: 25px;
+    border-radius: 100px 100px 100px 100px;
+    /* Take up full width of the container */
+  }
+  
+  .buttonContainer button:hover {
+    background-color: #f5d740;
+  }
+  
+  .gpttext{
+    font-family: "playfair";
+  }
+  
+  .FormclearButton{
+    width: 10vw;
+    height: 40px;
+    background-color: #f5da50;
+    color: #156064;
+    font-family: "playfair";
+    font-size: 25px;
+    border-radius: 100px 100px 100px 100px;
+  }
+  
+  
+  @media screen and (max-width: 822px){
+    .form {
+      display: grid;
+      grid-template-columns: 2fr 2fr;
+    }
+    .buttonContainer {
+      grid-column: 1 / span 2;
+    }
+    .title {
+      font-size: 60px !important;
+    }
+    .header {
+      font-size: 28px;
+    }
+    .headerP{
+      font-size: 15px;
+    }
+  }
+  
+  
+  @media screen and (max-width: 600px){
+    .form {
+      display: grid;
+      grid-template-columns: auto;
+    }
+    .buttonContainer {
+      grid-column: 1;
+      margin: 20px 50px ;
+  
+    }
+    .formItems{
+      padding: 5px;
+      margin:10px
+    }
+    .title {
+      font-size: 11vw !important;
+    }
+    .header {
+      font-size: 5vw;
+    }
+    .headerP{
+      font-size: 3vw;
+    } 
+  }
+  
+  
+  .particles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Make sure this z-index is lower than the z-index of the Navbar */
+  }
