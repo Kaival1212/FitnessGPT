@@ -39,7 +39,7 @@ function Form() {
     
       const gtpdata = async () => {
         setIsLoading(true);
-        await fetch(`${process.env.REACT_APP_BACKEND_SERVER}/a`, {
+        await fetch(`${process.env.REACT_APP_BACKEND_SERVER}/GPT`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
