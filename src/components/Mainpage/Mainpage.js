@@ -21,7 +21,7 @@ function Mainpage() {
         <p>Just fill out the form and see the magic. ✨</p>
 
         <div className="cta-button">
-          <NavLink to="/form" className="btn">
+          <NavLink to="/Form" className="btn">
             Get Started Now! 🏁
           </NavLink>
         </div>
@@ -62,7 +62,7 @@ function Mainpage() {
           <h3>
             Join Fitness GPT today and revolutionize your fitness journey! 🌟
           </h3>
-          <NavLink to="/form" className="btn">
+          <NavLink to="/Form" className="btn">
             Start Now! 🚀
           </NavLink>
         </div>

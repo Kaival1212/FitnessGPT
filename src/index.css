@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
 
-body{
-    background-color: #f8e16d;
-    font-family: "monoton";
-    margin: 0;
-    position:absolute;
+body {
+  background-color: #f8e16d;
+  font-family: "monoton";
+  margin: 0;
+  position: absolute;
+  height: 100%;
 }
 
-html
-{
+html {
   overflow-x: hidden;
+  height: 100%;
+
 }

@@ -1,7 +1,5 @@
-import React,{useState,useEffect ,useContext} from 'react'
-import {onAuthStateChanged } from "firebase/auth";
+import React,{useState ,useContext} from 'react'
 import { useNavigate } from "react-router-dom";
-import { auth } from '../AuthPage/firebaseconfig';
 import { input_fields } from '../inputfield';
 import { UserContext } from '../Context/Context';
 import "./Form.css"
@@ -12,7 +10,7 @@ function Form() {
     const [gpt, setgpt] = useState("");
     const navigate = useNavigate()
     const [isLoading, setIsLoading] = useState(false);
-    const [UserInfo, SetUserInfo] = useContext(UserContext)
+    const [UserInfo] = useContext(UserContext)
 
     const handleChange = (e) => {
         setFormData((prevData) => ({
@@ -26,16 +24,7 @@ function Form() {
         gtpdata();
       };
     
-      useEffect(() => {
-        onAuthStateChanged(auth, (state) => {
-          if (state) {
-            SetUserInfo(state)
-          }
-          else {
-            SetUserInfo(null)
-          }
-        })
-      }, [])
+
     
       const gtpdata = async () => {
         setIsLoading(true);
@@ -53,17 +42,7 @@ function Form() {
           }) // Process the response data
           .catch((error) => console.error("Error:", error)); // Handle any errors
       };
-  
-    useEffect(() => {
-      onAuthStateChanged(auth, (state) => {
-        if (state) {
-          SetUserInfo(state)
-        }
-        else {
-          SetUserInfo(null)
-        }
-      })
-    }, [])
+
 
       const handleClear = () => {
         setFormData({});

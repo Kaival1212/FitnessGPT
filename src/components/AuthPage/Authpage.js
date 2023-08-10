@@ -5,7 +5,7 @@ import "./Authpage.css";
 import GoogleIcon from "../../Images/google.png";
 import GithubIcon from "../../Images/github.png";
 import { useNavigate } from "react-router-dom";
-import { UserContext } from "../Context/Context";
+import { UserContext ,AddUserToDb} from "../Context/Context";
 
 function Authpage() {
   const [loginInfo, SetloginInfo] = useState({});
@@ -14,6 +14,12 @@ function Authpage() {
   const providerGoogleAuth = new GoogleAuthProvider()
   const providerGithubAuth = new GithubAuthProvider()
 
+
+  const addUserAfterLogin = async (userCredential) => {
+    const uid = userCredential?.user?.uid || userCredential?.uid || '';
+    const Email = userCredential?.user?.email || userCredential?.email || '';
+    await AddUserToDb({ uid ,Email})
+  }
 
 
   const handel_login_change = (e) => {
@@ -27,7 +33,8 @@ function Authpage() {
   const handelPopUpSignin = (provider) => {
     signInWithPopup(auth, provider).then((userCredential) => {
       SetUserInfo(userCredential)
-      navigate("/form"); 
+      addUserAfterLogin(userCredential)
+      navigate("/Form");
     })
       .catch((error) => {
         console.error(error);
@@ -38,7 +45,8 @@ function Authpage() {
     signInWithEmailAndPassword(auth, loginInfo.email, loginInfo.password)
       .then((userCredential) => {
         SetUserInfo(userCredential)
-        navigate("/form"); 
+        addUserAfterLogin(userCredential)
+        navigate("/Form"); 
       })
       .catch((error) => {
         console.error(error);
